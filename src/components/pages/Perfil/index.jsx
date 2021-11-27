@@ -1,11 +1,5 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import {
-    Col,
-    Form,
-    NavDropdown,
-    Row
-} from "react-bootstrap";
 import Profile from "../../common/profile";
 
 export default function Perfil() {
@@ -22,7 +16,8 @@ export default function Perfil() {
         <div> 
             <h4>Perfil</h4>
             {users?.map(item => (
-                <Profile  key={item._id} user={item}/>
+        
+                <Profile  key={item._id} user={item}/>    
             ))}
         
             </div>

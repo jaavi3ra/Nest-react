@@ -13,7 +13,7 @@ import Support from '../Support';
 
 
 
-export default function Home() {
+export default function Home( {children}) {
   const [count, setCount] = useState(0)
   const handleClick = () => setCount(count + 1)
   return (
@@ -30,8 +30,10 @@ export default function Home() {
 
           <Col sm={8}>
             <div>
-                <Profile user={{firstName: "fernanda"}}/>
-                <Subject />
+               {/* <Profile user={{firstName: "fernanda"}}/>*/}
+               <Container>
+                 {children}
+               </Container>
              
             </div>
           </Col>
