@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 export default function Navigation() {
   return (
-    <Navbar bg="light" variant="light" expand={false}>
+    <Navbar className="navcolor1" variant="dark" expand={false}>
       <Container fluid>
         <Navbar.Brand href="#">Navbar Offcanvas</Navbar.Brand>
         <Navbar.Toggle aria-controls="offcanvasNavbar" />
@@ -21,11 +21,12 @@ export default function Navigation() {
           id="offcanvasNavbar"
           aria-labelledby="offcanvasNavbarLabel"
           placement="end">
+        
 
-          <Offcanvas.Header closeButton>
+          <Offcanvas.Header closeButton className="">
             <Offcanvas.Title id="offcanvasNavbarLabel">Offcanvas</Offcanvas.Title>
           </Offcanvas.Header>
-          <Offcanvas.Body>
+          <Offcanvas.Body className="">
             <Nav className="justify-content-end flex-grow-1 pe-3">
               <Nav.Link as={Link} to="/">Home</Nav.Link>
               <Nav.Link as={Link} to="/perfil">Perfil</Nav.Link>

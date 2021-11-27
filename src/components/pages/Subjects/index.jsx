@@ -1,12 +1,15 @@
-import { Card, Col, Row } from "react-bootstrap";
+import { Card, Col, NavDropdown, Row } from "react-bootstrap";
 
 export default function Subject() {
     return (
+       
         <Row >
+              <h4>Ramos Inscritos</h4>
+            <NavDropdown.Divider />
             {Array.from({ length: 4 }).map((_, idx) => (
                 <Col>
                     <Card>
-                        <Card.Img variant="top" src="holder.js/100px160" />
+                        <Card.Img  src="holder.js/100px160" roundedCircle />
                         <Card.Body>
                             <Card.Title>Subject title</Card.Title>
                             <Card.Text>

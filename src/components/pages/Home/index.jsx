@@ -5,6 +5,8 @@ import {
   Container,
   Row
 } from 'react-bootstrap';
+import Profile from '../../common/profile';
+import Perfil from '../Perfil';
 import Subject from '../Subjects';
 import Support from '../Support';
 
@@ -16,30 +18,32 @@ export default function Home() {
   const handleClick = () => setCount(count + 1)
   return (
     <div className="home">
-    <Container fluid>
-      <Row xs={1} md={3} className="g-4">
-        <Col>
-          <div>
-            <Button variant="primary" onClick={handleClick}>
-              Count: {count}
-            </Button>
-          </div>
-        </Col>
+      <Container fluid>
+        <Row >
+          <Col sm>
+            <div>
+              <Button variant="primary" onClick={handleClick}>
+                Count: {count}
+              </Button>
+            </div>
+          </Col>
 
-        <Col>
-          <div>
-            <Subject />
-          </div>
-        </Col>
+          <Col sm={8}>
+            <div>
+                <Profile user={{firstName: "fernanda"}}/>
+                <Subject />
+             
+            </div>
+          </Col>
 
-        <Col>
-          <div>
-           <Support />
-          </div>
-        </Col>
+          <Col sm>
+            <div>
+              <Support />
+            </div>
+          </Col>
 
-      </Row>
-    </Container>
+        </Row>
+      </Container>
 
     </div>
 

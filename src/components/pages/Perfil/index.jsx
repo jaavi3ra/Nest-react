@@ -1,39 +1,31 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import {
     Col,
     Form,
     NavDropdown,
     Row
 } from "react-bootstrap";
+import Profile from "../../common/profile";
 
 export default function Perfil() {
+    const [users, setUsers] = useState() 
+    const fetchUsers = async () =>{
+        const response = await axios.get("https://proyectonest.herokuapp.com/api/users")
+        console.log(response)
+        setUsers(response.data)
+    }
+    useEffect( ()=>{
+        fetchUsers()
+    },[])
     return (  
-        <Form>
+        <div> 
             <h4>Perfil</h4>
-            <NavDropdown.Divider />
-            <Row>
-                <Col>
-                    <Form.Label>Rut</Form.Label>
-                    <Form.Control placeholder="First name" />
-                </Col>
-                <Col>
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control placeholder="Last name" />
-                </Col>
-
-            </Row>
-            <Row>
-                <Col>
-                    <Form.Label>Nombre</Form.Label>
-                    <Form.Control placeholder="First name" />
-                </Col>
-                <Col>
-                    <Form.Label>ID Matricula</Form.Label>
-                    <Form.Control placeholder="ID" />
-                    <Form.Label>Date</Form.Label>
-                    <Form.Control placeholder="Enrolled" />
-                </Col>           
-            </Row>
-            <NavDropdown.Divider />
-        </Form>
+            {users?.map(item => (
+                <Profile  key={item._id} user={item}/>
+            ))}
+        
+            </div>
+            
     )
 }
