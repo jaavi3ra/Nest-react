@@ -3,7 +3,8 @@ import {
   
 } from 'react-router-dom'
 import MainLayout from './components/layout/MainLayout';
-import Home from './components/pages/Home';
+import HomeContext from './components/layout/MainLayout/HomeLayout';
+
 
 import Router from './components/Router';
 
@@ -13,9 +14,9 @@ function App() {
   return (
     <BrowserRouter>  
       <MainLayout >
-        <Home>
+        <HomeContext>
           <Router />
-        </Home>
+        </HomeContext>
       </MainLayout>
     </BrowserRouter> 
   );

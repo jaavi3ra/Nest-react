@@ -1,27 +1,40 @@
-import { Card, Col, NavDropdown, Row } from "react-bootstrap";
+import {
+    Col,
+    Form,
+    NavDropdown,
+    Row
+} from "react-bootstrap";
+import Teacher from "../../common/teacher";
 
-export default function Subject() {
+export default function SubjectInfo() {
+    const subject = "nombre asignatura"
     return (
-       
-        <Row >
-              <h4>Ramos Inscritos</h4>
+        <Form>
+            <h4>{subject}</h4>
             <NavDropdown.Divider />
-            {Array.from({ length: 4 }).map((_, idx) => (
+            <Teacher />
+          
+            <NavDropdown.Divider />
+            <h4>Evaluations</h4>
+            <Row>
                 <Col>
-                    <Card>
-                        <Card.Img  src="holder.js/100px160" roundedCircle />
-                        <Card.Body>
-                            <Card.Title>Subject title</Card.Title>
-                            <Card.Text>
-                                This is a longer card with supporting text below as a natural
-                            </Card.Text>
-                            <Card.Subtitle className="mb-2 text-muted">Docente Subtitle</Card.Subtitle>
-                            <Card.Subtitle className="mb-2 text-muted">Email Subtitle</Card.Subtitle>
-                        </Card.Body>
-                    </Card>
+                    <Form.Label>Evaluacion: </Form.Label>
+                    <Form.Control placeholder="First name" />
                 </Col>
-            ))}
-        </Row>
+                <Col>
+                    <Form.Label>Fecha: </Form.Label>
+                    <Form.Control placeholder="Last name" />
+                </Col>
+            </Row>
+            <NavDropdown.Divider />
+            <h4>Session</h4>
+            <Row>
+                <Col>
+                    <Form.Label>Fecha: </Form.Label>
+                    <Form.Control placeholder="Last name" />
+                </Col>
+            </Row>
+        </Form>
     )
 
 }

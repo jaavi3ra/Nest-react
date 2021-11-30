@@ -1,55 +1,26 @@
-import { useState } from 'react';
-import {
-  Button,
-  Col,
-  Container,
-  Row
-} from 'react-bootstrap';
-import Profile from '../../common/profile';
-import Perfil from '../Perfil';
-import Subject from '../Subjects';
-import Support from '../Support';
 
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import Subject from '../../common/subject';
 
-
-
-export default function Home( {children}) {
-  const [count, setCount] = useState(0)
-  const handleClick = () => setCount(count + 1)
+export default function Home() {
+  const [subject, setSubject] = useState()
+  const fetchUsers = async () => {
+    const response = await axios.get("https://proyectonest.herokuapp.com/api/subject")
+    console.log(response)
+    setSubject(response.data)
+  }
+  useEffect(() => {
+    fetchUsers()
+  }, [])
   return (
-    <div className="home">
-      <Container fluid>
-        <Row >
-          <Col sm>
-            <div>
-              <Button variant="primary" onClick={handleClick}>
-                Count: {count}
-              </Button>
-            </div>
-          </Col>
-
-          <Col sm={8}>
-            <div>
-               {/* <Profile user={{firstName: "fernanda"}}/>*/}
-               <Container>
-                 {children}
-               </Container>
-             
-            </div>
-          </Col>
-
-          <Col sm>
-            <div>
-              <Support />
-            </div>
-          </Col>
-
-        </Row>
-      </Container>
-
-    </div>
-
-
+   <div>
+      {subject?.map(item =>(
+       <Subject key={item._id} subj={item} />
+      ))}
+    
+   </div>
+    
 
   )
 
