@@ -5,15 +5,15 @@ import {
   Container,
   Row
 } from 'react-bootstrap';
-import Support from '../../../pages/Support';
+import Support from './Support';
 
 
-export default function HomeContext({children}) {
+export default function HomeLayout({children}) {
   const [count, setCount] = useState(0)
   const handleClick = () => setCount(count + 1)
   return (
     <div className="home">
-      <Container fluid>
+      <Container fluid className="containerMain">
         <Row >
           <Col sm>
             <div>

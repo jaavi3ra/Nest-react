@@ -1,20 +1,51 @@
-import { Card, NavDropdown } from "react-bootstrap";
+
+import {
+    Col,
+    Form,
+    Row,
+    Button,
+    NavDropdown,
+    FloatingLabel
+} from "react-bootstrap";
 
 export default function Support() {
     return (
-        <Card style={{ width: '15rem' }}>
-            <Card.Body>
-                <Card.Title>Asistencia</Card.Title>
-                <NavDropdown.Divider />
-                <Card.Subtitle className="text-muted">Contacto</Card.Subtitle>
-                <Card.Link href="#">Card Link</Card.Link> <p/>
+        <div>
+            <h3>
+                Contacto
+            </h3>
+            <NavDropdown.Divider />
+            <Form>
+                <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Control size="sm" type="email" placeholder="name@example.com" />
+                    <Form.Label>Email Destino</Form.Label>
+                    <Form.Control size="sm" type="email" placeholder="name@example.com" />
+                    <Form.Text className="text-muted">
+                        Opcional.
+                    </Form.Text><p />
 
-                <Card.Subtitle className="text-muted">Sobre Inscripciones</Card.Subtitle>
-                <Card.Link href="#">Another Link</Card.Link><p/>
+                    <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
+                        <Form.Label column sm="2">Asunto:</Form.Label>
+                        <Col sm="10">
+                            <Form.Control type="text" placeholder="Asunto" />
+                        </Col>
+                    </Form.Group>
 
-                <Card.Subtitle className="text-muted">Contraseña</Card.Subtitle>
-                <Card.Link href="#">ForgotPassword?</Card.Link><p/>
-            </Card.Body>
-        </Card>
+                </Form.Group>
+                <>
+                    <FloatingLabel controlId="floatingTextarea2" label="Comments">
+                        <Form.Control
+                            as="textarea"
+                            placeholder="Leave a comment here"
+                            style={{ height: '100px' }}
+                        />
+                    </FloatingLabel>
+                </><p/>
+                <Button variant="primary" type="submit">
+                    Submit
+                </Button>
+            </Form>
+        </div>
     )
 }

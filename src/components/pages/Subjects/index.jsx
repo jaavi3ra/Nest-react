@@ -4,6 +4,7 @@ import {
     NavDropdown,
     Row
 } from "react-bootstrap";
+import Schedule from "../../common/Schedule";
 import Teacher from "../../common/teacher";
 
 export default function SubjectInfo() {
@@ -34,6 +35,7 @@ export default function SubjectInfo() {
                     <Form.Control placeholder="Last name" />
                 </Col>
             </Row>
+            <Schedule />
         </Form>
     )
 

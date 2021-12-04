@@ -6,7 +6,8 @@ import {
     Button
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import unu from './Image/ardenweald.jpg'
+import mini from '../../Image/ardenweald.jpg'
+
 export default function Subject({ subj }) {
     return (
         <div>
@@ -16,7 +17,7 @@ export default function Subject({ subj }) {
                 {Array.from({ length: 4 }).map((_, idx) => (
                     <Col>
                         <Card>
-                            <Card.Img src={unu} roundedCircle />
+                            <Card.Img src={mini} roundedCircle />
                             <Card.Body>
                                 <Card.Title> <Button as={Link} to="/subject" variant="link">{subj.namesubject}</Button> </Card.Title>
                                 <Card.Text>

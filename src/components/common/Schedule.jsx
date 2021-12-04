@@ -1,8 +1,9 @@
-import { Table } from "react-bootstrap";
+import { NavDropdown, Table } from "react-bootstrap";
 
 export default function Schedule(){
     return(
       <div>
+           <NavDropdown.Divider />
             <h4>Horario</h4>
         <Table striped bordered hover size="sm">
             <thead>

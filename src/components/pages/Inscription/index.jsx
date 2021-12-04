@@ -47,7 +47,7 @@ export default function Inscription() {
 
             <div>
                 <Teacher user={"a"} />
-                <NavDropdown.Divider />
+                 <NavDropdown.Divider />
                 <Schedule />
                 <Button variant="primary" type="submit">Asignar Ramo</Button>
             </div>

@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Profile from "../../common/profile";
-import Subject from "../../common/subject"
 import Home from "../Home";
 
 export default function Perfil() {

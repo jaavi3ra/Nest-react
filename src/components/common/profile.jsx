@@ -1,4 +1,8 @@
-import { Col, Form, NavDropdown, Row } from "react-bootstrap";
+import { 
+    Col, 
+    Form, 
+    NavDropdown, 
+    Row } from "react-bootstrap";
 
 export default function Profile({ user }) {
 
@@ -37,8 +41,6 @@ export default function Profile({ user }) {
                         <Form.Control placeholder="{Enrolled}" />
                     </Col>
                 </Row>
-
-
                 <NavDropdown.Divider />
             </Form>
         </div>
