@@ -6,22 +6,16 @@ import {
     Row,
     Button
 } from "react-bootstrap";
-
 import Schedule from "../../common/Schedule";
 import Teacher from "../../common/teacher";
-import getMessage from "../../common/alerts/Message";
+
 
 export default function Inscription() {
-
-    const alert = getMessage()
     return (
         <Form>
 
             <h4>Asignar Ramos disponibles</h4>
-            <NavDropdown.Divider />
-            <div>
-                {alert.success}
-            </div>
+            <NavDropdown.Divider />           
             <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
                 <Form.Label column sm="2">
                     Seccion:

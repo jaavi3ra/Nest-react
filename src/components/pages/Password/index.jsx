@@ -3,7 +3,8 @@ import {
     Col,
     Form,
     Button,
-    NavDropdown
+    NavDropdown,
+    FloatingLabel
 } from "react-bootstrap";
 import Password from "../../common/password";
 
@@ -15,12 +16,18 @@ export default function ChangePassword() {
             </h3>
             <NavDropdown.Divider />
             <Form>
-                <Form.Label column sm="2">Ingrese Rut </Form.Label>
-                <Col sm="10">
-                    <Form.Control type="text" placeholder="Rut" required />
-                </Col>
+            <>
+                <FloatingLabel 
+                controlId="floatingInput"
+                label="Ingrese Rut"
+                className="mb-3" >
+                    <Form.Control type="text" placeholder="11222333-8" required />
+                </FloatingLabel>
+            </>
                 <Password />
-                <Button variant="primary" type="submit">Cambiar</Button>
+                <div className="d-grid gap-2">
+                <Button  variant="primary" type="submit">Cambiar</Button>
+                </div>
             </Form>
         </div>
 

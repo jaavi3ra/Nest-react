@@ -1,12 +1,10 @@
-import { useEffect } from "react"
 import { useForm } from "react-hook-form"
-import { useNavigate } from "react-router"
+import { toast } from "react-toastify"
 import { useAuth } from "../../../context/AuthContext"
 import getAuthService from "../../../Services/getAuthService"
 
 const useLogin = () => {
-    const { registerToken, isAuthenticated } = useAuth() //localstorage
-    const  navigate  = useNavigate()
+    const { registerToken } = useAuth() //localstorage
 
     const { register, handleSubmit } = useForm({
         defaultValues: {
@@ -15,21 +13,23 @@ const useLogin = () => {
         }
     })
 
-    useEffect(() => {
-        if(isAuthenticated){
-            navigate('/')
-        }
-    },[navigate, isAuthenticated])
-
     const onSubmit = async data => {
-        const dataLogin = await getAuthService().login(data)
-        const token = dataLogin.accessToken
+        try {
+            const dataLogin = await getAuthService().login(data)
+            const token = dataLogin.accessToken
 
-        if (token) {
-            registerToken(token)
+            if (token) {
+                registerToken(token)
+            } else {
+                toast.error('Credenciales inválidas')
+            }
+
+        } catch (error) {
+            toast.error('🦄 Credenciales inválidas')
         }
-        console.log('Unauthorized')
+
     }
+
     return {
         register,
         handleSubmit: handleSubmit(onSubmit)

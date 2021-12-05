@@ -1,28 +1,41 @@
+ /* Color Nav */
  .navcolor1{
-
     background: rgb(84,65,121);
     background: linear-gradient(90deg, rgba(84,65,121,1) 0%, rgba(83,88,180,1) 14%, rgba(23,215,160,1) 100%); 
-
 }
+ /* Color offCanvas */
 .navcolor2{
-
     background: rgb(117,121,231);
     background: linear-gradient(to bottom right, rgba(117,121,231,0.9211267605633803) 0%, rgba(143,162,241,0.8985915492957747) 6%, rgba(154,179,245,0.8619718309859155) 17%, rgba(165,206,248,0.8929577464788733) 29%, rgba(185,255,252,1) 100%); 
 }
-
+ /* Container HomeLayout */
 .containerMain{
     padding-top: 12px;
     padding-bottom: 12px;
 }
-
+ /* Password */
 .changePassword{
-    padding-left: 15%;
-    padding-right: 15%;
+    padding-left: 10%;
+    padding-right: 10%;
 }
-
+ /* links*/
 .btn-link, .card-link{
     color:mediumslateblue;
 }
-
+ /* Login */
+ .login{
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-top: 5%;     
+ }
+ .loginForm{
+     padding-left: 5%;
+     padding-right: 5%;
+     padding-top: 5%;
+ }
+ .titleLogin{
+    font-style: oblique;
+    text-align: center;
+ }
 
 

@@ -45,7 +45,7 @@ export default function Navigation() {
                 <NavDropdown.Item as={Link} to="/">Home</NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/profile">Perfil</NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/login">Malla</NavDropdown.Item>
-                <NavDropdown title="Solicitudes" id="offcanvasNavbarDropdown">
+                <NavDropdown title="Solicitudes" id="offcanvasNavbarDropdown" variant="info">
                   <NavDropdown.Item as={Link} to="/assign"> + Asignacion de Ramos</NavDropdown.Item>
                   <NavDropdown.Item as={Link} to="/assign"> + Asignacion de Ramos</NavDropdown.Item>
                   <NavDropdown.Divider />

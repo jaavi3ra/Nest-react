@@ -29,7 +29,6 @@ function Router() {
             <Route exact path="/documents" element={<PrivateRoute Component={Documents}/>} />
         </Routes>
 
-
     )
 }
 export default Router
