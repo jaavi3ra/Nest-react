@@ -25,7 +25,7 @@ const useLogin = () => {
             }
 
         } catch (error) {
-            toast.error('🦄 Credenciales inválidas')
+            toast.error('Credenciales inválidas')
         }
 
     }
