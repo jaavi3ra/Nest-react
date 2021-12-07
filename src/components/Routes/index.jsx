@@ -3,7 +3,7 @@ import {
     Routes
 } from 'react-router-dom'
 import Login from '../pages/Login'
-import Perfil from '../pages/Perfil'
+import Perfil from '../pages/Profile'
 import Home from '../pages/Home'
 import Subject from '../pages/Subjects'
 import Inscription from '../pages/Inscription'

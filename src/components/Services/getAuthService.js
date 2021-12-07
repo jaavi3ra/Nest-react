@@ -1,5 +1,5 @@
 import axios from "axios"
-import jwtDecode from "jwt-decode"
+
 
 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:4000'
 
@@ -14,9 +14,9 @@ const getAuthService = () => {
         return response.data
     }
     const NewPassword = async ({ rut, password }) => {
-        const tokenTemp = await apiClient.post('/getID', { rut })
-        const decode = jwtDecode(tokenTemp)
-        const response = await apiClient.put(`/changePassword/${decode.sub}`,{ password })
+        const dataID = await apiClient.post('/getID', { rut })
+        const response = await apiClient.put(`/NewPassword/${dataID.data}`,{ password })
+        console.log(response)
         return response.data
     }
     return {

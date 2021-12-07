@@ -1,8 +1,9 @@
 import axios from "axios"
+import jwtDecode from "jwt-decode"
 
 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:4000'
 
-const getSubjectService = (token) => {
+const getSectionService = (token) => {
 
     const apiClient = axios.create({
         baseURL: API_URL,
@@ -10,17 +11,15 @@ const getSubjectService = (token) => {
             Authorization: token ? `Bearer ${token}` : undefined
         }
     })
-
-    const getAll = async () => {
-       // const decode = jwtDecode(token)
-       // const ID = await apiClient.get(`/getIDSection/${decode._id}`) 
-        const response = await apiClient.get(`/api/subject/`)
+    
+    const getSection = async () => {
+        const decode = jwtDecode(token)
+        const response = await apiClient.get(`/api/section/${decode.sub}`)
         return response.data
     }
-    
    
     return {
-        getAll      
+        getSection      
     }
 }
-export default getSubjectService
+export default getSectionService

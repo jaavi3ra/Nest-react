@@ -11,13 +11,11 @@ import mini from '../../Image/ardenweald.jpg'
 export default function Subject({ subj }) {
     return (
         <div>
-            <h4>Ramos Inscritos</h4>
             <Row >
-                <NavDropdown.Divider />
-                {Array.from({ length: 4 }).map((_, idx) => (
+                <NavDropdown.Divider />        
                     <Col>
                         <Card>
-                            <Card.Img src={mini} roundedCircle />
+                            <Card.Img src={mini} />
                             <Card.Body>
                                 <Card.Title> <Button as={Link} to="/subject" variant="link">{subj.namesubject}</Button> </Card.Title>
                                 <Card.Text>
@@ -28,8 +26,6 @@ export default function Subject({ subj }) {
                             </Card.Body>
                         </Card>
                     </Col>
-                ))}
-                <NavDropdown.Divider />
             </Row>
         </div>
     )

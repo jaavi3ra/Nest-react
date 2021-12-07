@@ -43,7 +43,7 @@ export default function Navigation() {
             <Offcanvas.Body className="">
               <Nav className="justify-content-end flex-grow-1 pe-3">
                 <NavDropdown.Item as={Link} to="/">Home</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/profile">Perfil</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/profile">profile</NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/login">Malla</NavDropdown.Item>
                 <NavDropdown title="Solicitudes" id="offcanvasNavbarDropdown" variant="info">
                   <NavDropdown.Item as={Link} to="/assign"> + Asignacion de Ramos</NavDropdown.Item>
