@@ -1,8 +1,6 @@
 import {
-    Col,
     Form,
     NavDropdown,
-    Row
 } from "react-bootstrap";
 import Schedule from "../../common/Schedule";
 import Teacher from "../../common/teacher";
