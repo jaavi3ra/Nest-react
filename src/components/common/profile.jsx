@@ -5,10 +5,9 @@ import {
     Row } from "react-bootstrap";
 
 export default function Profile({ user }) {
-
     return (
         <div>
-             <h4>profile</h4>
+             <h4>Perfil</h4>
             <Form>
                 <NavDropdown.Divider />
                 <Row>

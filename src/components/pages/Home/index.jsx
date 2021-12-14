@@ -1,37 +1,25 @@
-import { useEffect, useState } from 'react';
-import { Form } from 'react-bootstrap';
-import useSubjectService from '../../../hooks/useSubjectService';
-import useSectionService from '../../../hooks/useSectionService';
+import { Form, NavDropdown, Row } from 'react-bootstrap';
 import Subject from '../../common/subject';
+import useIDSection from './hook/useIDSection';
+import useIDSubjet from './hook/useIDSubject';
 
 export default function Home() {
-  const [subject, setSubject] = useState()
-  const [section, setSection] = useState()
-  const { getAll } = useSubjectService()
-  const { getSection } = useSectionService()
-
-  useEffect(() => {
-    getAll()
-        .then(setSubject)
-        .catch(console.error)
-  }, [getAll])
-
-  useEffect(() => {
-    getSection()
-        .then(setSection)
-        .catch(console.error)
-  }, [ getSection ])
+  const section = useIDSection()
+  const subject = useIDSubjet()
 
   return (
     <div>
       <h4>Ramos Inscritos</h4>
-        <Form.Label sm="2"  >
-          Seccion: {section?.section_name}
-        </Form.Label>
-
-      {subject?.map(item => (
-        <Subject key={item._id} subj={item} />
-      ))}
+      <Form.Label sm="2"  >
+        Seccion: {section?.section_name}
+      </Form.Label>
+      <NavDropdown.Divider />
+      <Row xs={1} md={2} className="g-4">
+        {subject?.map(item => (
+          <Subject key={item._id} subj={item} />
+        ))}
+      </Row>
+      <NavDropdown.Divider />
 
     </div>
 

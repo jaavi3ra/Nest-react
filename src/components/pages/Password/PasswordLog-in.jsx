@@ -5,8 +5,7 @@ import {
     NavDropdown,
     FloatingLabel
 } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import usePass from "./hook/usePassword"
+import usePass from "./hook/usePasswordLog-in"
 
 
 export default function ChangePassword() {
@@ -19,13 +18,6 @@ export default function ChangePassword() {
             <NavDropdown.Divider />
             <Form onSubmit={handleSubmit}>
                 <>
-                    <FloatingLabel
-                        controlId="floatingInput"
-                        label="Ingrese Rut"
-                        className="mb-3" >
-                        <Form.Control type="text" placeholder="11222333-8" required {...register('rut')} />
-                    </FloatingLabel>
-
                     <FloatingLabel controlId="floatingPassword" label="Contraseña Nueva" >
                         <Form.Control type="password" placeholder="Password" required  {...register('password')} />
                     </FloatingLabel ><p />
@@ -40,7 +32,6 @@ export default function ChangePassword() {
 
                 <div className="d-grid gap-2">
                     <Button variant="primary" type="submit">Cambiar</Button>
-                    <Button variant="outline-secondary" as={Link} to='/login'>Volver</Button>
                 </div>
             </Form>
         </div>

@@ -3,22 +3,23 @@ import {
     Form, 
     Row } from "react-bootstrap";
 
-export default function Teacher(user){
+export default function Teacher({ teacher }){
+   
     return(
         <div>
             <h5>Docente</h5>
         <Row>
             <Col>
                 <Form.Label>Rut</Form.Label>
-                <Form.Control placeholder={user.rut} />
+                <Form.Control placeholder={teacher?.rut} plaintext readOnly />
             </Col>
             <Col>
                 <Form.Label>Nombre</Form.Label>
-                <Form.Control placeholder={user.nombre} />
+                <Form.Control placeholder={teacher?.firstname + ' '+ teacher?.lastname} plaintext readOnly />
             </Col>       
             <Col>
                 <Form.Label>Email</Form.Label>
-                <Form.Control placeholder={user.email} />
+                <Form.Control placeholder={teacher?.email} plaintext readOnly />
             </Col>
 
         </Row> 

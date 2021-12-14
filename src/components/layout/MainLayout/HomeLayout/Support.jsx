@@ -17,7 +17,7 @@ export default function SupportLayout() {
                 <Card.Link href="#">Revisar.</Card.Link><p />
 
                 <Card.Subtitle className="text-muted">Contraseña</Card.Subtitle>
-                <Card.Link as={Link} to={"/password"}>Cambio de Contraseña.</Card.Link><p />
+                <Card.Link as={Link} to={"/ChangePassword"}>Cambio de Contraseña.</Card.Link><p />
             </Card.Body>
         </Card>
     )

@@ -3,7 +3,7 @@ import jwtDecode from "jwt-decode"
 
 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:4000'
 
-const getUserService = (token) => {
+const getSessionService = (token) => {
 
     const apiClient = axios.create({
         baseURL: API_URL,
@@ -12,15 +12,13 @@ const getUserService = (token) => {
         }
     })
     
-    const getUserById = async () => {
-        const decode = jwtDecode(token)     
-        const response = await apiClient.get(`/api/users/${decode.sub}`)
+    const getSessionByIdSubject = async (id) => {   
+        const response = await apiClient.get(`/api/session/${id}`)
         return response.data
     }
-    
-   
+     
     return {
-        getUserById   
+        getSessionByIdSubject   
     }
 }
-export default getUserService
+export default getSessionService

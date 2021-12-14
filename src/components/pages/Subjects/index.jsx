@@ -6,36 +6,31 @@ import {
 } from "react-bootstrap";
 import Schedule from "../../common/Schedule";
 import Teacher from "../../common/teacher";
+import Session from "../../common/Session";
+import Evaluation from "../../common/Evaluation";
+import useEvaluationBySubj from "./hook/useEvaluationBySubject";
+import useSubjectByIdParams from "./hook/useSubjectById";
+import useSession from "./hook/useSession";
 
 export default function SubjectInfo() {
-    const subject = "nombre asignatura"
+    const subject = useSubjectByIdParams()
+    const evaluation = useEvaluationBySubj()
+    const session = useSession()
+    console.log(subject?._id)
+
     return (
         <Form>
-            <h4>{subject}</h4>
+            <h4>{subject?.namesubject}</h4>
             <NavDropdown.Divider />
-            <Teacher />
-          
-            <NavDropdown.Divider />
-            <h4>Evaluations</h4>
-            <Row>
-                <Col>
-                    <Form.Label>Evaluacion: </Form.Label>
-                    <Form.Control placeholder="First name" />
-                </Col>
-                <Col>
-                    <Form.Label>Fecha: </Form.Label>
-                    <Form.Control placeholder="Last name" />
-                </Col>
-            </Row>
+            <Teacher teacher={subject?.teacher?.user} />
             <NavDropdown.Divider />
             <h4>Session</h4>
-            <Row>
-                <Col>
-                    <Form.Label>Fecha: </Form.Label>
-                    <Form.Control placeholder="Last name" />
-                </Col>
-            </Row>
-            <Schedule />
+            <Session session={session} />
+            <NavDropdown.Divider />
+            <h4>Evaluaciones</h4>
+            <Evaluation eva={evaluation} />
+            <NavDropdown.Divider />
+            <Schedule schedule={subject} />
         </Form>
     )
 

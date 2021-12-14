@@ -9,9 +9,11 @@ import {
 import { Link } from 'react-router-dom';
 import background from '../../../Image/ana.jpg'
 import { useAuth } from '../../context/AuthContext';
+import useUserByid from '../../pages/Profile/hook/useUserByid';
 
 export default function Navigation() {
   const { logout } = useAuth()
+  const user = useUserByid()
   return (
     <div>
 
@@ -25,7 +27,7 @@ export default function Navigation() {
           <Navbar.Toggle aria-controls="offcanvasNavbar" />
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text>
-              Signed in as: <a href="#login">Mark Otto</a>
+              Signed in as: <a href="#login">{user?.firstname}</a>
             </Navbar.Text>
           </Navbar.Collapse>
 
@@ -43,13 +45,12 @@ export default function Navigation() {
             <Offcanvas.Body className="">
               <Nav className="justify-content-end flex-grow-1 pe-3">
                 <NavDropdown.Item as={Link} to="/">Home</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/profile">profile</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/profile">Perfil</NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/login">Malla</NavDropdown.Item>
                 <NavDropdown title="Solicitudes" id="offcanvasNavbarDropdown" variant="info">
                   <NavDropdown.Item as={Link} to="/assign"> + Asignacion de Ramos</NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to="/assign"> + Asignacion de Ramos</NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item as={Link} to="/document">
+                  <NavDropdown.Item as={Link} to="/documents">
                     + Generar Certificados
                   </NavDropdown.Item>
                 </NavDropdown>

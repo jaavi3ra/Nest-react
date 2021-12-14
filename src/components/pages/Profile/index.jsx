@@ -1,26 +1,21 @@
-import { useEffect, useState } from "react";
-import { Col, Form, NavDropdown, Row } from "react-bootstrap";
-import useSectionService from "../../../hooks/useSectionService";
-import useUserService from "../../../hooks/useUserService";
+import {
+    Col,
+    Form,
+    NavDropdown,
+    Row
+} from "react-bootstrap";
 import Home from "../Home";
+import useSection from "./hook/useSection";
+import useUserByid from "./hook/useUserByid";
+import useSubmission from "./hook/useSubmission";
+
 
 export default function Perfil() {
-    const { getUserById } = useUserService()
-    const { getSection } = useSectionService()
-    
-    const [user, setUser] = useState()
-    useEffect(() => {
-        getUserById()
-            .then(setUser)
-            .catch(console.error)
-    }, [getUserById])
-    
-    const [section, setSection] = useState()
-    useEffect(() => {
-      getSection()
-          .then(setSection)
-          .catch(console.error)
-    }, [ getSection ])
+    const user = useUserByid()
+    const section = useSection()
+    const submision = useSubmission()
+    console.log(submision)
+
     return (
         <div>
             <h4>Perfil</h4>
@@ -29,38 +24,41 @@ export default function Perfil() {
                 <Row>
                     <Col>
                         <Form.Label>Rut</Form.Label>
-                        <Form.Control placeholder={user?.rut} readOnly/>
+                        <Form.Control placeholder={user?.rut} plaintext readOnly />
                     </Col>
                     <Col>
                         <Form.Label>Seccion</Form.Label>
-                        <Form.Control placeholder={section?.section_name} readOnly/>
+                        <Form.Control placeholder={section?.section_name} plaintext readOnly />
                     </Col>
                     <Col>
                         <Form.Label>Email</Form.Label>
-                        <Form.Control placeholder={user?.email} readOnly/>
+                        <Form.Control placeholder={user?.email} plaintext readOnly/>
                     </Col>
 
                 </Row>
                 <Row>
                     <Col>
                         <Form.Label>Nombre</Form.Label>
-                        <Form.Control placeholder={user?.firstname + " " + user?.lastname} readOnly/>
+                        <Form.Control placeholder={user?.firstname + " " + user?.lastname} plaintext readOnly />
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <Form.Label>ID Matricula</Form.Label>
-                        <Form.Control placeholder={user?.firstname + " " + user?.lastname} readOnly/>
+                        <Form.Label>Título</Form.Label>
+                        <Form.Control className="mb-3" placeholder={submision?.title} plaintext readOnly/>
                     </Col>
                     <Col>
-                        <Form.Label>Date</Form.Label>
-                        <Form.Control placeholder="{Enrolled}" readOnly/>
+                    <Form.Label>Grado</Form.Label>
+                     <Form.Control className="mb-3" placeholder={submision?.grade} plaintext readOnly/>
+                    </Col>
+                    <Col>
+                        <Form.Label>Fecha Ingreso</Form.Label>
+                        <Form.Control placeholder={submision?.student?.enrolled} plaintext readOnly />
                     </Col>
                 </Row>
                 <NavDropdown.Divider />
             </Form>
             <Home />
         </div>
-
     )
 }

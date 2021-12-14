@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import useLogin from './hook/useLogin';
 
 export default function Login() {
-    const { register, handleSubmit, validekey } = useLogin()
+    const { register, handleSubmit } = useLogin()
     return (
         <div className="loginForm">
             <h5>Ingresar al portal</h5>
@@ -18,7 +18,7 @@ export default function Login() {
                         label="Ingrese Rut"
                         className="mb-3"
                     >
-                        <Form.Control type="text" onKeyPress={validekey}  {...register('rut')} required />
+                        <Form.Control type="text" {...register('rut')} required />
                         <Form.Text className="text-muted">
                             *Debe ingresar el rut sin puntos y con guión.*
                         </Form.Text>

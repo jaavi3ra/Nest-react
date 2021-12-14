@@ -14,14 +14,18 @@ const getAuthService = () => {
         return response.data
     }
     const NewPassword = async ({ rut, password }) => {
-        const dataID = await apiClient.post('/getID', { rut })
+        const dataID = await apiClient.post('/api/users/rut/', { rut })
         const response = await apiClient.put(`/NewPassword/${dataID.data}`,{ password })
-        console.log(response)
+        return response.data
+    }
+    const ChangePassword = async ({ id, password }) => {
+        const response = await apiClient.put(`/changePassword/${id}`,{ password })
         return response.data
     }
     return {
         login,
-        NewPassword
+        NewPassword,
+        ChangePassword
     }
 }
 export default getAuthService

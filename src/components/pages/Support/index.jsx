@@ -20,7 +20,7 @@ export default function Support() {
                     <Form.Label>Email address</Form.Label>
                     <Form.Control size="sm" type="email" placeholder="name@example.com" />
                     <Form.Label>Email Destino</Form.Label>
-                    <Form.Control size="sm" type="email" placeholder="name@example.com" />
+                    <Form.Control size="sm" type="email" placeholder="name@example.com" defaultValue="support@nest.cl" />
                     <Form.Text className="text-muted">
                         Opcional.
                     </Form.Text><p />

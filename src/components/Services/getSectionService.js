@@ -17,9 +17,14 @@ const getSectionService = (token) => {
         const response = await apiClient.get(`/api/section/${decode.sub}`)
         return response.data
     }
+    const getAllSection = async () => {
+        const response = await apiClient.get('/api/section/')
+        return response.data
+    }
    
     return {
-        getSection      
+        getSection,
+        getAllSection      
     }
 }
 export default getSectionService
