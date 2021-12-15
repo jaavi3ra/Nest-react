@@ -4,7 +4,7 @@ import jwtDecode from "jwt-decode"
 
 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:4000'
 
-const getAuthService = (token) => {
+const getPasswordService = (token) => {
 
     const apiClient = axios.create({
         baseURL: API_URL,
@@ -23,4 +23,4 @@ const getAuthService = (token) => {
         ChangePassword
     }
 }
-export default getAuthService
+export default getPasswordService

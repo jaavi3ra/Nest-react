@@ -12,10 +12,12 @@ export default function Session({session}){
                 </tr>
             </thead>
             <tbody>
+                    {session?.map((item,i) =>
                 <tr>
                     <td><Button variant="link">Enlace</Button></td>                 
-                    <td>{session?.datetime}</td>              
+                    <td value={i}>{item.datetime}</td>              
                 </tr>          
+                    )}
             </tbody>
         </Table>
       </div>

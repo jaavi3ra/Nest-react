@@ -1,9 +1,9 @@
 import { useForm } from "react-hook-form"
 import { toast } from "react-toastify"
-import getPasswordService from "../../../Services/getPasswordService"
+import usePasswordMainService from "../../../../../hooks/usePasswordMainService"
 
 const usePassword = () => {
-   const {ChangePassword} = getPasswordService()
+   const { ChangePassword } = usePasswordMainService()
     const { register, handleSubmit } = useForm({
         defaultValues: {
             password: ''
@@ -12,16 +12,16 @@ const usePassword = () => {
 
     const onSubmit = async data => {
         try {
-            const dataPassword = await ChangePassword(data)
+            const password = await ChangePassword(data)
          
-            if (dataPassword) {
+            if (password) {
                 toast.success('Contraseña cambiada con éxito.')
             } else {
                 toast.error('Contraseña inválida (1)') 
             }
         } catch (error) {
             console.log(error)
-            toast.error('Credenciales inválidas (2)')
+            toast.error('Error Servidor (2)')
         }
     }
     return{

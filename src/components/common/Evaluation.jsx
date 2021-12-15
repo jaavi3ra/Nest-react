@@ -1,4 +1,5 @@
 import {  
+    Button,
     Table} from "react-bootstrap";
 
 export default function Teacher({ eva }){
@@ -16,9 +17,9 @@ export default function Teacher({ eva }){
             <tbody>
                 {eva?.map(item =>(
                     <tr>
-                    <td>{item.name}</td>
+                    <td><Button variant="link">{item.name}</Button></td>
                     <td>{item.deadline}</td>
-                    <td>Otto</td>                 
+                    <td>{item.datetime}</td>                 
                 </tr>          
              ))}
             </tbody>

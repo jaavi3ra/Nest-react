@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router"
 import { toast } from "react-toastify"
-import getAuthService from "../../../Services/getAuthService"
+import getAuthService from "../../../../Services/getAuthService"
 
 const usePass = () => {
     const navigate = useNavigate()
@@ -24,7 +24,7 @@ const usePass = () => {
             }
         } catch (error) {
             console.log(error)
-            toast.error('Credenciales inválidas (2)')
+            toast.error('Error Servidor (2)')
         }
     }
     return{

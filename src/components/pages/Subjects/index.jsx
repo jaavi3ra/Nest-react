@@ -22,7 +22,7 @@ export default function SubjectInfo() {
             <NavDropdown.Divider />
             <Teacher teacher={subject?.teacher?.user} />
             <NavDropdown.Divider />
-            <h4>Session</h4>
+            <h4>Sesiones</h4>
             <Session session={session} />
             <NavDropdown.Divider />
             <h4>Evaluaciones</h4>

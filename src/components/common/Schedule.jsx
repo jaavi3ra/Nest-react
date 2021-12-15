@@ -1,6 +1,7 @@
 import { NavDropdown, Table } from "react-bootstrap";
 
 export default function Schedule({schedule}){
+    
     return(
       <div>
            <NavDropdown.Divider />
@@ -9,16 +10,19 @@ export default function Schedule({schedule}){
             <thead>
                 <tr>
                     <th>Hora</th>                 
-                    <th>Fecha</th>  
-                    <th>Resumen</th>             
+                    <th>Día</th>
+                    <th>Resumen</th>                                 
                 </tr>
             </thead>
             <tbody>
-                <tr>
+           
+                 <tr>
                     <td>{schedule?.hour}</td>               
                     <td>{schedule?.date}</td> 
-                    <td>{schedule?.hour +' '+ schedule?.date}</td>       
-                </tr>   
+                    <td>{schedule?.date + ", " +schedule?.hour}</td> 
+                </tr> 
+                 
+                
             </tbody>
         </Table>
       </div>
