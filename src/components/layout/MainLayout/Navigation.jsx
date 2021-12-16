@@ -23,11 +23,11 @@ export default function Navigation() {
 
       <Navbar className="navcolor1" variant="dark" expand={false}>
         <Container fluid>
-          <Navbar.Brand href="#">Portal Nest</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/">Portal Nest</Navbar.Brand>
           <Navbar.Toggle aria-controls="offcanvasNavbar" />
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text>
-              Signed in as: <a href="#login">{user?.firstname}</a>
+              Signed in as: <a href="#login">{user?.firstname +' '+user?.lastname}</a>
             </Navbar.Text>
           </Navbar.Collapse>
 
