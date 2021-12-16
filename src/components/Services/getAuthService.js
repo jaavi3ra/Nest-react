@@ -14,8 +14,7 @@ const getAuthService = () => {
         return response.data
     }
     const NewPassword = async ({ rut, password }) => {
-        const dataID = await apiClient.post('/api/users/rut/', { rut })
-        const response = await apiClient.put(`/NewPassword/${dataID.data}`,{ password })
+        const response = await apiClient.post(`/NewPassword/`,{ rut, password })
         return response.data
     }
     const ChangePassword = async ({ id, password }) => {

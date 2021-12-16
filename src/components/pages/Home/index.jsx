@@ -14,7 +14,7 @@ export default function Home() {
         Seccion: {section?.section_name}
       </Form.Label>
       <NavDropdown.Divider />
-      <Row xs={1} md={2} className="g-4">
+      <Row xs={1} md={2} className="g-5">
         {subject?.map(item => (
           <Subject key={item._id} subj={item} />
         ))}

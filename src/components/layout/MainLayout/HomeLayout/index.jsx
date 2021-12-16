@@ -28,7 +28,7 @@ export default function HomeLayout({children}) {
             </div>
           </Col>
 
-          <Col sm>
+          <Col >
             <div>
               <Support />
             </div>
