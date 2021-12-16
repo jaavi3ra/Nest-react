@@ -46,7 +46,6 @@ export default function Navigation() {
               <Nav className="justify-content-end flex-grow-1 pe-3">
                 <NavDropdown.Item as={Link} to="/">Home</NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/profile">Perfil</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/login">Malla</NavDropdown.Item>
                 <NavDropdown title="Solicitudes" id="offcanvasNavbarDropdown" variant="info">
                   <NavDropdown.Item as={Link} to="/assign"> + Asignacion de Ramos</NavDropdown.Item>
                   <NavDropdown.Divider />
@@ -55,7 +54,7 @@ export default function Navigation() {
                   </NavDropdown.Item>
                 </NavDropdown>
                 <NavDropdown.Divider />
-                <NavDropdown.Item as={Link} to="/login" onClick={logout}> LogOut</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/login" onClick={logout}> Cerrar Sesión</NavDropdown.Item>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>

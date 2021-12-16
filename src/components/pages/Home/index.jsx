@@ -5,7 +5,7 @@ import useIDSubjet from './hook/useIDSubject';
 
 export default function Home() {
   const section = useIDSection()
-  const subject = useIDSubjet()
+  const subject = useIDSubjet(section?._id)
 
   return (
     <div>
