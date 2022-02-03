@@ -2,7 +2,6 @@
 
 export default function LoginLayout({ children }) {
     return (
-
         <div className='login'>    
             <div className="titleLogin">         
                 <h1> Bienvenido a NEST</h1>
