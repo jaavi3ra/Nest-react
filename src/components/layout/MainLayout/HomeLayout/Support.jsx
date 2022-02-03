@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 export default function SupportLayout() {
     return (
-        <Card style={{ width: '15rem' }}>
+        <Card style={{ width: '23rem' }}>
             <Card.Body>
                 <Card.Title>Asistencia</Card.Title>
                 <NavDropdown.Divider />

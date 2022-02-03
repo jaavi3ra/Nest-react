@@ -1,7 +1,7 @@
 import axios from "axios"
 
 
-const API_URL = process.env.REACT_APP_API_URL 
+const API_URL = process.env.REACT_APP_API_URL
 
 const getAuthService = () => {
 
@@ -10,7 +10,7 @@ const getAuthService = () => {
     })
 
     const login = async ({ rut, password }) => {
-        const response = await apiClient.post('/login', { rut, password })
+        const response = await apiClient.post('/login',{ rut, password })
         return response.data
     }
     const NewPassword = async ({ rut, password }) => {

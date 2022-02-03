@@ -15,7 +15,6 @@ const getPasswordService = (token) => {
 
     const ChangePassword = async ({ password }) => {
         const id = jwtDecode(token)
-        console.log(id.sub)
         const response = await apiClient.put(`/changePassword/${id.sub}`,{ password })
         return response.data
     }

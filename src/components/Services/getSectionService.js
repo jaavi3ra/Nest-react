@@ -13,13 +13,18 @@ const getSectionService = (token) => {
     })
     
     const getSection = async () => {
-        const decode = jwtDecode(token)
-        const response = await apiClient.get(`/api/section/${decode.sub}`)
+        const studentList = await getStudentListByUser()  
+        const response = await apiClient.get(`/api/section/${studentList}`)
         return response.data
     }
     const getAllSection = async () => {
         const response = await apiClient.get('/api/section/')
         return response.data
+    }
+    const getStudentListByUser = async () => {
+        const decode = jwtDecode(token)
+        const response = await apiClient.get(`/api/studentList/${decode.sub}`)    
+        return response.data._id
     }
    
     return {

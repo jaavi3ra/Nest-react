@@ -4,10 +4,7 @@ import useTeacherService from "../../../../hooks/useTeacherService"
 export default function useIDTeacher(subjectdata) {
     const { getTeacherById } = useTeacherService()
     const [teacher, setTeacher] = useState()
-    useEffect(() => {
-        if (!subjectdata) {
-            console.log('error: ', subjectdata)
-        }
+    useEffect(() => {      
         getTeacherById(subjectdata)
             .then(setTeacher)
             .catch(console.error)

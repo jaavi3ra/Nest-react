@@ -13,9 +13,9 @@ import useSession from "./hook/useSession";
 export default function SubjectInfo() {
     const subject = useSubjectByIdParams()
     const evaluation = useEvaluationBySubj()
-    const session = useSession()
-    console.log(subject?._id)
-
+    const session = useSession() 
+    console.log(session)
+   
     return (
         <Form>
             <h4>{subject?.namesubject}</h4>
@@ -27,8 +27,8 @@ export default function SubjectInfo() {
             <NavDropdown.Divider />
             <h4>Evaluaciones</h4>
             <Evaluation eva={evaluation} />
-            <NavDropdown.Divider />
-            <Schedule schedule={subject} />
+            <NavDropdown.Divider />  
+            <Schedule schedule={subject?.schedule} />             
         </Form>
     )
 

@@ -4,10 +4,9 @@ import {
     Row } from "react-bootstrap";
 
 export default function Teacher({ teacher }){
-   
     return(
         <div>
-            <h5>Docente</h5>
+            <h4>Docente</h4>
         <Row>
             <Col>
                 <Form.Label>Rut</Form.Label>

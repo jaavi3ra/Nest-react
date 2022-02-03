@@ -13,24 +13,18 @@ const getSubjectService = (token) => {
     })
     
     const getAllSubjectbySection = async (id) => {
-        const response = await apiClient.get(`/api/subject/sec/${id}`)
+        const response = await apiClient.get(`/api/subject/${id}`)
         return response.data
     }
    
-    const getAllbySection = async () => {
-        const decode = jwtDecode(token)
-        const section = await apiClient.get(`/api/section/${decode.sub}`)
-        const response = getAllSubjectbySection(section.data._id)
-        return response
-    }
-    
     const getSubjectById = async (id) =>{
         const response = await apiClient.get(`/api/subject/${id}`)
         return response.data
     }
     
+    
     return {
-        getAllbySection,
+       
         getSubjectById,
         getAllSubjectbySection
             

@@ -20,45 +20,26 @@ export default function Navigation() {
       <div>
         <Image src={background} fluid />
       </div>
-
-      <Navbar className="navcolor1" variant="dark" expand={false}>
-        <Container fluid>
+      <Navbar className="navcolor1" variant="dark">
+        <Container>
           <Navbar.Brand as={Link} to="/">Portal Nest</Navbar.Brand>
-          <Navbar.Toggle aria-controls="offcanvasNavbar" />
-          <Navbar.Collapse className="justify-content-end">
-            <Navbar.Text>
-              Signed in as: <a href="#login">{user?.firstname +' '+user?.lastname}</a>
-            </Navbar.Text>
-          </Navbar.Collapse>
-
-          <Navbar.Offcanvas
-            id="offcanvasNavbar"
-            aria-labelledby="offcanvasNavbarLabel"
-            placement="end" 
-            bg="dark" 
-            expand="lg">
-            <Offcanvas.Header closeButton className="navcolor2">
-              <Offcanvas.Title id="offcanvasNavbarLabel">Menú</Offcanvas.Title>
-            </Offcanvas.Header>
-            <NavDropdown.Divider />
-
-            <Offcanvas.Body className="">
-              <Nav className="justify-content-end flex-grow-1 pe-3">
-                <NavDropdown.Item as={Link} to="/">Home</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/profile">Perfil</NavDropdown.Item>
-                <NavDropdown title="Solicitudes" id="offcanvasNavbarDropdown" variant="info">
-                  <NavDropdown.Item as={Link} to="/assign"> + Asignacion de Ramos</NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item as={Link} to="/documents">
-                    + Generar Certificados
-                  </NavDropdown.Item>
-                </NavDropdown>
-                <NavDropdown.Divider />
-                <NavDropdown.Item as={Link} to="/login" onClick={logout}> Cerrar Sesión</NavDropdown.Item>
-              </Nav>
-            </Offcanvas.Body>
-          </Navbar.Offcanvas>
+          <Nav className="me-auto" >
+            <Nav.Link as={Link} to="/" >Home</Nav.Link>
+            <Nav.Link as={Link} to="/profile" >Perfil</Nav.Link>
+            <NavDropdown title="Solicitudes" id="collasible-nav-dropdown" menuVariant="dark">
+              <NavDropdown.Item as={Link} to="/assign"> + Asignacion de Ramos</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2"> + Asignar Sección</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item as={Link} to="/documents"> + Generar Certificados </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
         </Container>
+        <Navbar.Collapse className="justify-content-center">
+          <Nav className='justify-content-center'>
+            <Nav.Link href="#">Bienvenido <a href="#user">{user?.firstname + ' ' + user?.lastname}</a></Nav.Link>
+            <Nav.Link as={Link} to="/login" onClick={logout}> Cerrar Sesión</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
       </Navbar>
     </div>
   )

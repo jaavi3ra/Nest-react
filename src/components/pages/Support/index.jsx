@@ -17,22 +17,25 @@ export default function Support() {
             <NavDropdown.Divider />
             <Form>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                    <Form.Label>Email address</Form.Label>
+                    <Form.Label>Email</Form.Label>
                     <Form.Control size="sm" type="email" placeholder="name@example.com" required />
+                    <br/> 
                     <Form.Label>Email Destino</Form.Label>
                     <Row>
                         <Col>
                             <Form.Control size="sm" type="email" defaultValue="support@nest.cl" readOnly plaintext />
+                            <Form.Text className="text-muted">
+                           *support@nest.cl es el correo de soporte hacia coordinadores.
+                            </Form.Text>                       
                         </Col>
                         <Col>
-                            <Form.Control size="sm" type="email" placeholder="name@example.com"/>
+                            <Form.Control size="sm" type="email" placeholder="Agregue otro correo institucional."/>
+                            <Form.Text className="text-muted">
+                            *Opcional.
+                            </Form.Text>
                         </Col>
-
                     </Row>
-                    <Form.Text className="text-muted">
-                        *support@nest.cl es el correo de soporte hacia coordinadores.
-                    </Form.Text><p />
-
+                    <br/>         
                     <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
                         <Form.Label column sm="2">Asunto:</Form.Label>
                         <Col sm="10">
@@ -51,7 +54,7 @@ export default function Support() {
                     </FloatingLabel>
                 </><p />
                 <Button variant="primary" type="submit">
-                    Submit
+                    Enviar
                 </Button>
             </Form>
         </div>

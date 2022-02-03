@@ -1,26 +1,26 @@
-import { NavDropdown, Table } from "react-bootstrap";
+import { Table } from "react-bootstrap";
 
 export default function Schedule({schedule}){
     
     return(
       <div>
-           <NavDropdown.Divider />
             <h4>Horario</h4>
         <Table bordered hover size="sm">
             <thead>
                 <tr>
                     <th>Hora</th>                 
                     <th>Día</th>
-                    <th>Resumen</th>                                 
+                    <th>Fecha</th>                                 
                 </tr>
             </thead>
             <tbody>
-           
+           {schedule?.map(item => (
                  <tr>
-                    <td>{schedule?.hour}</td>               
-                    <td>{schedule?.date}</td> 
-                    <td>{schedule?.date + ", " +schedule?.hour}</td> 
+                    <td>{item?.hour}</td>               
+                    <td>{item?.day}</td> 
+                    <td>{item?.date}</td> 
                 </tr> 
+           ))}
                  
                 
             </tbody>

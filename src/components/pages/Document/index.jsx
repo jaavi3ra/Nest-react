@@ -11,9 +11,10 @@ export default function Documents() {
         <div>
             <h3>Certificados</h3>
             <NavDropdown.Divider />
+            <div className="document">
             <Form>
                 <Row>
-                    <Col>
+                    <Col xs={10}>
                         <Form.Label>Certificado de Alumno</Form.Label>
                     </Col>
                     <Col>
@@ -21,6 +22,7 @@ export default function Documents() {
                     </Col>
                 </Row>
             </Form>
+            </div>
         </div>
     )
 }

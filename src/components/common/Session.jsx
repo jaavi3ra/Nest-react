@@ -8,14 +8,16 @@ export default function Session({session}){
             <thead>
                 <tr>
                     <th>...</th>
-                    <th>Fecha</th>              
+                    <th>Fecha</th>  
+                    <th>Hora</th>             
                 </tr>
             </thead>
             <tbody>
-                    {session?.map((item,i) =>
+                    {session?.map((item,i) =>   
                 <tr>
                     <td><Button variant="link">Enlace</Button></td>                 
-                    <td value={i}>{item.datetime}</td>              
+                    <td value={i}>{item?.datetime?.date}</td>   
+                    <td value={i}>{item?.datetime?.hour}</td>            
                 </tr>          
                     )}
             </tbody>
